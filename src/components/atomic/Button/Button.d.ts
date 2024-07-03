@@ -1,0 +1,3 @@
+interface IButton {
+    text: string;
+}
