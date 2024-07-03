@@ -3,8 +3,12 @@ import Input from '@/components/atomic/InputBox';
 import { INPUT_TYPE, LOGIN_MODAL_TEXT, REGISTER_MODAL_TEXT } from '@/constants';
 import Button from '@/components/atomic/Button';
 import Modal from '@/components/Modal';
-import { getItemFromLocalStorage } from '@/services/localStorage.service';
 import { AESEncryptionService } from '@/services/encryption.service';
+import {
+  isValidEmail,
+  isValidPassword,
+  isValidUsername,
+} from '@/utils/validations.utils';
 
 export const LoginComponent = ({
   onLogin = () => {},
@@ -16,13 +20,27 @@ export const LoginComponent = ({
     password: '',
   });
 
-  const isButtonDisabled = () => state.email === '' || state.password === '';
-  const handleEmailInputChange = (event: any) => {
-    setState({ ...state, email: event.target.value });
+  const isButtonDisabled = () =>
+    state.email === '' ||
+    state.password === '' ||
+    isValidUsername(state.email) ||
+    isValidPassword(state.password) ||
+    isValidEmail(state.email);
+    
+  const handleEmailInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const email = event.target.value;
+
+    if (isValidEmail(email) || isValidUsername(email))
+      setState({ ...state, email });
   };
 
-  const handlePasswordInputChange = (event: any) => {
-    setState({ ...state, password: event.target.value });
+  const handlePasswordInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const password = event.target.value;
+    if (isValidPassword(password)) setState({ ...state, password });
   };
 
   const handleSubmit = (event: any) => {
@@ -85,17 +103,32 @@ export const RegisterComponent = ({
   });
 
   const isButtonDisabled = () =>
-    state.email === '' || state.password === '' || state.username === '';
+    state.email === '' ||
+    state.password === '' ||
+    state.username === '' ||
+    isValidUsername(state.email) ||
+    isValidPassword(state.password) ||
+    isValidEmail(state.email);
 
-  const handleEmailInputChange = (event: any) => {
-    setState({ ...state, email: event.target.value });
+  const handleEmailInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const email = event.target.value;
+    setState({ ...state, email });
   };
 
-  const handlePasswordInputChange = (event: any) => {
-    setState({ ...state, password: event.target.value });
+  const handlePasswordInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const password = event.target.value;
+    setState({ ...state, password });
   };
-  const handleUsernameInputChange = (event: any) => {
-    setState({ ...state, username: event.target.value });
+
+  const handleUsernameInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const username = event.target.value;
+    setState({ ...state, username });
   };
 
   const handleSubmit = (event: any) => {
