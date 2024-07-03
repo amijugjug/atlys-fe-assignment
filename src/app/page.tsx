@@ -1,6 +1,6 @@
 'use client';
-import Portal from '@/components/Portal';
-import LoginRegisterModal from '@/features/LoginRegisterModal';
+import Portal from '@/components/atomic/organisms/Portal';
+import LoginRegisterModal from '@/components/atomic/templates/LoginRegisterModal';
 import React, { useEffect, useState } from 'react';
 
 const Home = () => {

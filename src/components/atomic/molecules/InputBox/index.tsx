@@ -4,7 +4,7 @@ import s from './InputBox.module.scss';
 import { INPUT_TYPE } from '@/constants';
 import Image from 'next/image';
 import EyeImage from '@/../public/static/AtlysEye.svg';
-import Label from '../Label';
+import Label from '../../atoms/Label';
 
 const InputBox = ({
   title,

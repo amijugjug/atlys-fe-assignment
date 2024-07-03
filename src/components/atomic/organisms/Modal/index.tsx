@@ -5,7 +5,7 @@ import CloseButton from '@/../public/static/CloseButton.svg';
 
 import s from './Modal.module.scss';
 import { IFooterText, IModal } from './Modal';
-import Label from '../atomic/Label';
+import Label from '../../atoms/Label';
 
 const FooterText = ({
   statement,

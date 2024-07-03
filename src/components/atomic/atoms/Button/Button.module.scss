@@ -2,12 +2,15 @@
     background: #4A96FF;
     height: 43px;
     border-radius: 4px;
-    width: 100%;
+    width:111px;
     border:none;
     cursor: pointer;
 }
 .buttonDisabled {
     opacity: 0.5;
+}
+.buttonLarge{
+    width: 100%;
 }
 
 .buttonText {

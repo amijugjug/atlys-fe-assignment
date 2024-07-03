@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Input from '@/components/atomic/InputBox';
+import Input from '@/components/atomic/molecules/InputBox';
 import { INPUT_TYPE, LOGIN_MODAL_TEXT, REGISTER_MODAL_TEXT } from '@/constants';
-import Button from '@/components/atomic/Button';
-import Modal from '@/components/Modal';
+import Button from '@/components/atomic/atoms/Button';
+import Modal from '@/components/atomic/organisms/Modal';
 import { AESEncryptionService } from '@/services/encryption.service';
 import {
   isValidEmail,
@@ -26,7 +26,7 @@ export const LoginComponent = ({
     isValidUsername(state.email) ||
     isValidPassword(state.password) ||
     isValidEmail(state.email);
-    
+
   const handleEmailInputChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -86,6 +86,7 @@ export const LoginComponent = ({
         text={LOGIN_MODAL_TEXT.buttonText}
         onClick={handleSubmit}
         disabled={isButtonDisabled()}
+        size="large"
       />
     </>
   );
@@ -183,6 +184,7 @@ export const RegisterComponent = ({
         text={REGISTER_MODAL_TEXT.buttonText}
         onClick={handleSubmit}
         disabled={isButtonDisabled()}
+        size="large"
       />
     </>
   );
