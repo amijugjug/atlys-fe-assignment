@@ -1,3 +1,5 @@
 interface IButton {
-    text: string;
+  text: string;
+  onClick: (event: MouseEventHandler<HTMLButtonElement>) => void;
+  disabled?: boolean;
 }
