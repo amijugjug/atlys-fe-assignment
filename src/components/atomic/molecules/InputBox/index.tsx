@@ -22,7 +22,7 @@ const InputBox = ({
   };
   return (
     <div className={s.inputBox}>
-      <Label className={s.label} title={title} />
+      <Label title={title} size={'14px'} color={'#C5C7CA'} />
       <span className={s.inputWrapper}>
         <input
           type={typeState}

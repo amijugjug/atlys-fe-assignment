@@ -14,12 +14,14 @@ const FooterText = ({
 }: IFooterText) => {
   return (
     <span className={s.modalFooter}>
-      <Label className={s.statementText} title={statement} />
+      <Label title={statement} size={'14px'} color={'#7F8084'} />
       {redirectionText ? (
         <Label
-          className={`${s.statementText} ${s.redirectionText}`}
+          color={'#ffffff'}
           title={` ${redirectionText} →`}
           onClick={onRedirectionTextClick}
+          size={'14px'}
+          cursor="pointer"
         />
       ) : null}
     </span>
@@ -46,6 +48,8 @@ const Modal = ({ children, props }: IModal) => {
             alt="Close"
             className={s.closeButton}
             onClick={closeButtonOnClick}
+            style={{ cursor: 'pointer' }}
+            role="button"
           />
         ) : null}
         <p className={s.headerText}>{headerText}</p>
