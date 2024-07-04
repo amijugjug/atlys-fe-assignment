@@ -6,12 +6,14 @@ const Button = ({
   onClick,
   disabled = false,
   size = 'medium',
+  align = 'center',
 }: IButton) => {
   return (
     <button
       className={`${s.button} ${disabled ? s.buttonDisabled : ''} ${size === 'large' ? s.buttonLarge : ''}`}
       onClick={onClick}
       disabled={disabled}
+      style={{ alignSelf: align }}
     >
       {text}
     </button>
