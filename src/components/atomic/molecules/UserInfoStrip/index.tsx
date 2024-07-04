@@ -6,7 +6,13 @@ import s from './UserInfoStrip.module.scss';
 
 import More from '@/../public/static/More.svg';
 
-const UserInfoStrip = ({ profileDetails }: { profileDetails: any }) => {
+const UserInfoStrip = ({
+  profileDetails,
+  onOptionButtonClick,
+}: {
+  profileDetails: any;
+  onOptionButtonClick: () => void;
+}) => {
   return (
     <div className={s.userInfoStrip}>
       <div className={s.userDetailsContainer}>
@@ -27,9 +33,9 @@ const UserInfoStrip = ({ profileDetails }: { profileDetails: any }) => {
           </span>
         </div>
       </div>
-      <div className={s.moreContainer}>
+      <button className={s.moreContainer} onClick={onOptionButtonClick}>
         <Image src={More} alt="More" />
-      </div>
+      </button>
     </div>
   );
 };
