@@ -1,0 +1,15 @@
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    width: 700px;
+    border: 2px solid #35373B;
+    border-radius: 8px;
+    padding: 24px 20px;
+    background: #27292D;
+
+}
+.cardFooter{
+    display: flex;
+    gap:8px;
+}
