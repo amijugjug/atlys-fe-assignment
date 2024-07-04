@@ -1,0 +1,21 @@
+.userDetailsContainer{
+    display: flex;
+    gap: 20px;
+}
+
+.userInfoStrip{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; 
+}
+
+.userInfoContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.userMetaContainer{
+    display: inline;
+}
