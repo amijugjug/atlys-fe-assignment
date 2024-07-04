@@ -5,6 +5,7 @@ import Image from 'next/image';
 import s from './UserInfoStrip.module.scss';
 
 import More from '@/../public/static/More.svg';
+import { timeAgo } from '@/utils/helpers.utils';
 
 const UserInfoStrip = ({
   profileDetails,
@@ -23,7 +24,11 @@ const UserInfoStrip = ({
         <div className={s.userInfoContainer}>
           <Label title={profileDetails.name} size="16px" color="#C5C7CA" />
           <span className={s.userMetaContainer}>
-            <Label size="14px" title={'8 minutes ago'} color="#7F8084" />
+            <Label
+              size="14px"
+              title={timeAgo(profileDetails.createdAt)}
+              color="#7F8084"
+            />
             {profileDetails?.isEdited ? (
               <>
                 <Label size="14px" title={' • '} color="#7F8084" />

@@ -18,6 +18,7 @@ export const LOGIN_MODAL_TEXT = {
   },
   buttonText: 'Login Now',
 };
+
 export const REGISTER_MODAL_TEXT = {
   headerText: 'SIGN UP',
   descriptionText: 'Create an account to continue',

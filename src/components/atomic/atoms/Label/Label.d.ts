@@ -7,4 +7,5 @@ export interface ILabel {
   lineHeight?: string;
   textAlign?: 'center' | 'left' | 'right';
   cursor?: 'pointer' | 'default';
+  alignSelf?: 'flex-start' | 'flex-end' | 'center';
 }

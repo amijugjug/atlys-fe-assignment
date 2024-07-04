@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import s from './Avatar.module.scss';
-import ProfilePic from '@/../public/static/CloseButton.svg';
+import ProfilePic from '@/../public/static/ProfilePic.svg';
 import { IAvatar } from './Avatar';
 
 const Avatar = ({ imageUrl = '', alt = '' }: IAvatar) => {
@@ -15,12 +15,18 @@ const Avatar = ({ imageUrl = '', alt = '' }: IAvatar) => {
           alt={alt}
           width={44}
           height={44}
-          onError={() => setImageError(true)} // Not directly supported in Next.js
+          onError={() => setImageError(true)}
           className={s.image}
         />
       )}
       {imageError && (
-        <img src={ProfilePic} alt="ProfilePic" className={s.image} />
+        <Image
+          src={ProfilePic}
+          alt={alt}
+          width={44}
+          height={44}
+          className={s.image}
+        />
       )}
     </div>
   );

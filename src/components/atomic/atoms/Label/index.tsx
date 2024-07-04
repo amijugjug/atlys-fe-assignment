@@ -11,6 +11,7 @@ const Label = ({
   lineHeight = '16.94px',
   textAlign = 'left',
   cursor = 'default',
+  alignSelf = 'flex-start',
 }: ILabel) => {
   const style = {
     textAlign: textAlign,
@@ -19,6 +20,7 @@ const Label = ({
     color: color,
     lineHeight: lineHeight,
     cursor: cursor,
+    alignSelf: alignSelf,
   };
 
   return (

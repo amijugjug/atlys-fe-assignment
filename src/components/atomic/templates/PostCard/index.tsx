@@ -8,32 +8,27 @@ import CommentIcon from '@/../public/static/Comment.svg';
 import TextArea from '../../molecules/TextArea';
 import { IPostCard } from './PostCard';
 
-const PostCard = ({ onClick }: IPostCard) => {
-  const content =
-    'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.';
-  const profileItems = {
-    name: 'Prakhar Srivastava',
-    createdAt: 1720067648495,
-    isEdited: true,
-    profileImageUrl:
-      'https://images.firstpost.com/uploads/2024/01/Kareena.jpg?im=FitAndFill=(596,336)',
-  };
-
+const PostCard = ({ onClick, post }: IPostCard) => {
   const onOptionButtonClick = () => {};
   return (
     <div className={s.cardContainer} onClick={onClick}>
       <UserInfoStrip
-        profileDetails={profileItems}
+        profileDetails={post.profile}
         onOptionButtonClick={onOptionButtonClick}
       />
       <TextArea
-        value={content}
+        value={post.content}
         placeHolder="How are you feeling today?"
         disabled={true}
       />
       <div className={s.cardFooter}>
-        <Image src={CommentIcon} alt="Comment" />
-        <Label title="24 comments" size="14px" color="#7F8084" />
+        <Image src={CommentIcon} alt="Comment" width={20} height={20} />
+        <Label
+          title={`${post.comments?.length} comments`}
+          size="14px"
+          color="#7F8084"
+          alignSelf="center"
+        />
       </div>
     </div>
   );
