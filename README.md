@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Here is a `README.md` file for your project:
+
+```markdown
+# Social Media Platform UI
+
+This is a frontend project built using Next.js and TypeScript. It represents the user interface of a social media platform where users can log in and sign up. User data is encrypted and stored in local storage. The project is developed using the atomic design methodology.
+
+## Description
+
+This project aims to create a user interface for a social media platform with the following features:
+
+- User login and signup.
+- User data encryption and storage in local storage.
+- Display of data on cards using dummy data.
+- Future implementation of post functionality.
+
+## Work Done
+
+- Display of data on cards using dummy data.
+- Login and signup modal display
+
+## Directory Structure
+```
+
+src
+├── app
+├── components
+│ └── atomic
+│ ├── atoms
+│ ├── molecules
+│ ├── organisms
+│ └── templates
+├── contexts
+├── features
+├── services
+├── utils
+├── constants.ts
+└── dummyData.ts
+
+````
+
+On the `src` level:
+- `.env`
+- `.eslintrc.json`
+- `.gitignore`
+- `.prettierignore`
+- `.prettierrc`
+- `next.config.mjs`
+- `package.json`
+- `tsconfig.json`
+- `README.md`
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Make sure you have the following software installed:
+
+- Node.js
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+````
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd <project-directory>
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+   or
+
+   ```bash
+   yarn install
+   ```
+
+### Running the Project
+
+To start the development server, run:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+or
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Building the Project
 
-## Learn More
+To build the project for production, run:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+or
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+yarn build
+```
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Please open an issue or submit a pull request if you have any improvements or new features to suggest.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- Built with [Next.js](https://nextjs.org/)
+- Developed using the [Atomic Design Methodology](http://atomicdesign.bradfrost.com/)
+
+```
+
+Feel free to adjust any sections or add more details as needed.
+```
