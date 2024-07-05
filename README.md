@@ -1,6 +1,5 @@
 Here is a `README.md` file for your project:
 
-```markdown
 # Social Media Platform UI
 
 This is a frontend project built using Next.js and TypeScript. It represents the user interface of a social media platform where users can log in and sign up. User data is encrypted and stored in local storage. The project is developed using the atomic design methodology.
@@ -20,24 +19,22 @@ This project aims to create a user interface for a social media platform with th
 - Login and signup modal display
 
 ## Directory Structure
-```
 
+```bash
 src
 ├── app
 ├── components
-│ └── atomic
-│ ├── atoms
-│ ├── molecules
-│ ├── organisms
-│ └── templates
+│   └── atomic
+│       ├── atoms
+│       ├── molecules
+│       ├── organisms
+│       └── templates
 ├── contexts
 ├── features
 ├── services
 ├── utils
 ├── constants.ts
 └── dummyData.ts
-
-````
 
 On the `src` level:
 - `.env`
@@ -49,6 +46,8 @@ On the `src` level:
 - `package.json`
 - `tsconfig.json`
 - `README.md`
+
+```
 
 ## Getting Started
 
@@ -65,7 +64,8 @@ Make sure you have the following software installed:
 
    ```bash
    git clone <repository-url>
-````
+
+   ```
 
 2. Navigate to the project directory:
 
