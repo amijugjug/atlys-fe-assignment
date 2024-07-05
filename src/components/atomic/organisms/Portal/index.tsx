@@ -1,21 +1,19 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useContext } from 'react';
 import { IPortal } from './Portal';
 
 import { createPortal } from 'react-dom';
 
 import s from './Portal.module.scss';
+import { useModal } from '@/contexts/Modal.context';
 
-export default function Portal({
-  children,
-  className = 'root-portal',
-  el = 'div',
-  toggleModal = function () {},
-}: IPortal) {
-  const [container] = useState(document?.createElement(el));
+export default function Portal({ children }: IPortal) {
+  const [container] = useState(document?.createElement('div'));
   const node = useRef<any>();
-  container.classList.add(className);
+  container.classList.add('root-portal');
+
+  const { toggleModal } = useModal();
 
   const escButtonClick = (event: KeyboardEvent) => {
     if (event.code === (27).toString()) {
