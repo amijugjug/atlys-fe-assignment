@@ -1,5 +1,3 @@
-Here is a `README.md` file for your project:
-
 # Social Media Platform UI
 
 This is a frontend project built using Next.js and TypeScript. It represents the user interface of a social media platform where users can log in and sign up. User data is encrypted and stored in local storage. The project is developed using the atomic design methodology.
