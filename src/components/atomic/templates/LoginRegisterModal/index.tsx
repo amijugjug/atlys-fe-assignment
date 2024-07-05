@@ -9,6 +9,7 @@ import {
   isValidPassword,
   isValidUsername,
 } from '@/utils/validations.utils';
+import { useModal } from '@/contexts/Modal.context';
 
 export const LoginComponent = ({
   onLogin = () => {},
@@ -190,8 +191,10 @@ export const RegisterComponent = ({
   );
 };
 
-const LoginRegisterModal = ({ closeModal }: { closeModal: () => void }) => {
+const LoginRegisterModal = () => {
   const [modalType, setModalType] = useState('Login');
+
+  const { toggleModal } = useModal();
 
   const toggleRegisterModal = () => {
     setModalType((prev) => (prev === 'Login' ? 'Register' : 'Login'));
@@ -210,7 +213,7 @@ const LoginRegisterModal = ({ closeModal }: { closeModal: () => void }) => {
   useEffect(() => {
     if (modalType === 'Login') {
       setModalProps({
-        closeButtonOnClick: closeModal,
+        closeButtonOnClick: toggleModal,
         headerText: LOGIN_MODAL_TEXT.headerText,
         descriptionText: LOGIN_MODAL_TEXT.descriptionText,
         footerStatementText: LOGIN_MODAL_TEXT.footerStatementText,
@@ -220,7 +223,7 @@ const LoginRegisterModal = ({ closeModal }: { closeModal: () => void }) => {
       });
     } else {
       setModalProps({
-        closeButtonOnClick: closeModal,
+        closeButtonOnClick: toggleModal,
         headerText: REGISTER_MODAL_TEXT.headerText,
         descriptionText: REGISTER_MODAL_TEXT.descriptionText,
         footerStatementText: REGISTER_MODAL_TEXT.footerStatementText,
@@ -234,9 +237,9 @@ const LoginRegisterModal = ({ closeModal }: { closeModal: () => void }) => {
   return (
     <Modal props={modalProps}>
       {modalType === 'Register' ? (
-        <RegisterComponent onRegister={() => closeModal()} />
+        <RegisterComponent onRegister={() => toggleModal()} />
       ) : (
-        <LoginComponent onLogin={() => closeModal()} />
+        <LoginComponent onLogin={() => toggleModal()} />
       )}
     </Modal>
   );
